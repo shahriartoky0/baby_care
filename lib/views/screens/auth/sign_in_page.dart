@@ -112,16 +112,14 @@ class _SignInPageState extends State<SignInPage> {
                           AppString.forgotPassword,
                           style: Theme.of(
                             context,
-                          ).textTheme.displayMedium?.copyWith(color: AppColors.black),
+                          ).textTheme.displayMedium?.copyWith(color: AppColors.black,decoration: TextDecoration.underline),
                           textAlign: TextAlign.end,
+
                         ),
                       ),
                     ],
                   ),
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: <Widget>[AppTextUnderline(width: 100), SizedBox(width: 8)],
-                  ),
+
                   const SizedBox(height: 16),
 
                   PrimaryButton(
