@@ -1,0 +1,32 @@
+class AppIcons {
+  AppIcons._();
+  static String baseUrl = "assets/icons";
+  static String addIcon = "$baseUrl/add_icon.svg";
+  static String bloodIcon = "$baseUrl/blood_icon.svg";
+  static String calendarIcon = "$baseUrl/calendar_icon.svg";
+  static String diaperIcon = "$baseUrl/diaper_icon.svg";
+  static String emailIcon = "$baseUrl/email_icon.svg";
+  static String feedingIcon = "$baseUrl/feeding_icon.svg";
+  static String fullProgress = "$baseUrl/full_progress.svg";
+  static String genderIcon = "$baseUrl/gender_icon.svg";
+  static String profileIcon = "$baseUrl/profile_icon.svg";
+  static String growthIcon = "$baseUrl/growth_icon.svg";
+  static String lastPartialProgress = "$baseUrl/last_partial_progress.svg";
+  static String lockIcon = "$baseUrl/lock_icon.svg";
+  static String medicineIcon = "$baseUrl/medicine_icon.svg";
+  static String milestoneIcon = "$baseUrl/milestone_icon.svg";
+  static String navBabyIcon = "$baseUrl/nav_baby_icon.svg";
+  static String navHomeIcon = "$baseUrl/nav_home_icon.svg";
+  static String notificationIcon = "$baseUrl/notification_icon.svg";
+  static String progressEmpty = "$baseUrl/progress_empty.svg";
+  static String progressPartial = "$baseUrl/progress_partial.svg";
+  static String pumpingIcon = "$baseUrl/pumping_icon.svg";
+  static String scaleIcon = "$baseUrl/scale_icon.svg";
+  static String secondPartialProgress = "$baseUrl/second_partial_progress.svg";
+  static String sleepingIcon = "$baseUrl/sleeping_icon.svg";
+  static String vaccineIcon = "$baseUrl/vaccine_icon.svg";
+  static String weightIcon = "$baseUrl/weight_icon.svg";
+  static String thumbIcon = "$baseUrl/thumb_icon.svg";
+  static String girlIcon = "$baseUrl/girl_icon.svg";
+  static String boyIcon = "$baseUrl/boy_icon.svg";
+}
