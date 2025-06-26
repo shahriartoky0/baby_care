@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:together_baby/utilities/app_theme.dart';
 import 'package:together_baby/views/screens/auth/sign_in_page.dart';
+import 'package:together_baby/views/screens/home/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      home: SignInPage(),
+      home: HomeScreen(),
       theme: AppTheme.defaultThemeData,
       initialBinding: ControllerBinder(),
       debugShowCheckedModeBanner: false,

@@ -29,4 +29,4 @@ class AppIcons {
   static String thumbIcon = "$baseUrl/thumb_icon.svg";
   static String girlIcon = "$baseUrl/girl_icon.svg";
   static String boyIcon = "$baseUrl/boy_icon.svg";
-}
+ }

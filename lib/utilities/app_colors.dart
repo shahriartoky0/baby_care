@@ -19,4 +19,12 @@ class AppColors {
   static const Color modalIconInnerColor = Color(0xFFF9E4C8);
   static const Color modalIconOuterColor = Color(0xFFCCC49D);
   static const Color greenColor = Color(0xFF344F47);
+  static const Color feedCardColor = Color(0xFFFF725E);
+  static const Color pumpCardColor = Color(0xFF6782E5);
+  static const Color diaperCardColor = Color(0xFFCCC49D);
+  static const Color sleepCardColor = Color(0xFF37A085);
+  static const Color medicineCardColor = Color(0xFF344F47);
+  static const Color vaccineCardColor = Color(0xFF5043D9);
+  static const Color growCardColor = Color(0xFF834E2E);
+  static const Color milestoneCardColor = Color(0xFFCBA8EE);
 }
