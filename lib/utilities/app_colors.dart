@@ -27,4 +27,5 @@ class AppColors {
   static const Color vaccineCardColor = Color(0xFF5043D9);
   static const Color growCardColor = Color(0xFF834E2E);
   static const Color milestoneCardColor = Color(0xFFCBA8EE);
+  static const Color iconBackground = Color(0xFFEBEDED);
 }

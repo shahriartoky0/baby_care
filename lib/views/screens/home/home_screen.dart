@@ -5,6 +5,7 @@ import 'package:together_baby/utilities/app_colors.dart';
 import 'package:together_baby/utilities/images/app_images.dart';
 import 'package:together_baby/views/base/components/app_icon.dart';
 import 'package:together_baby/views/base/components/custom_svg.dart';
+import 'package:together_baby/views/screens/notification_page.dart';
 
 import '../../base/components/image_carousel.dart';
 import '../../base/widgets/home_card.dart';
@@ -28,7 +29,9 @@ class HomeScreen extends StatelessWidget {
                   backgroundColor: AppColors.modalIconInnerColor,
                   radius: 16,
                   child: IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.to(() => const NotificationPage());
+                    },
                     icon: const Icon(CupertinoIcons.bell_fill, size: 16),
                   ),
                 ),

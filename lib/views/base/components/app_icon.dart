@@ -3,7 +3,7 @@ class AppIcons {
   static String baseUrl = "assets/icons";
   static String addIcon = "$baseUrl/add_icon.svg";
   static String bloodIcon = "$baseUrl/blood_icon.svg";
-  static String calendarIcon = "$baseUrl/calendar_icon.svg";
+  static String calendarIcon = "$baseUrl/calender_icon.svg";
   static String diaperIcon = "$baseUrl/diaper_icon.svg";
   static String emailIcon = "$baseUrl/email_icon.svg";
   static String feedingIcon = "$baseUrl/feeding_icon.svg";
@@ -29,4 +29,4 @@ class AppIcons {
   static String thumbIcon = "$baseUrl/thumb_icon.svg";
   static String girlIcon = "$baseUrl/girl_icon.svg";
   static String boyIcon = "$baseUrl/boy_icon.svg";
- }
+  }

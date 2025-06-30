@@ -240,7 +240,8 @@ class _ImageSliderState extends State<ImageSlider> {
                             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                             color: AppColors.modalIconOuterColor.withValues(alpha: 0.6),
                             child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Text(
                                   "Essential Breastfeeding Tips For New Moms",
