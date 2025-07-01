@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:together_baby/utilities/app_colors.dart';
 import 'package:together_baby/views/base/components/primary_button.dart';
 import '../../../../controller/breast_feeding_controller.dart';
+import '../../../../model/timer_measure_class.dart';
 import '../../../base/widgets/app_bar.dart';
 import '../../../base/widgets/large_letter_container.dart';
 
@@ -26,7 +27,7 @@ class AddBreastfeeding extends StatelessWidget {
                   child: PrimaryButton(
                     buttonText: 'Next',
                     onPressed: () {
-                      final BreastFeedingTiming breastFeedingTiming = BreastFeedingTiming(
+                      final TimerMeasureClass breastFeedingTiming = TimerMeasureClass(
                         leftBreastTime: controller.leftSideSeconds.value,
                         rightBreastTime: controller.leftSideSeconds.value,
                         totalTime: controller.seconds.value,
@@ -46,99 +47,89 @@ class AddBreastfeeding extends StatelessWidget {
               /// ==========================>  Timer Display
               Center(
                 child: Obx(
-                  () =>
-                      controller.seconds.value == 0
-                          ? const SizedBox.shrink()
-                          : Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                            decoration: BoxDecoration(
-                              color: AppColors.primaryColor.withValues(alpha: 0.1),
-                              borderRadius: BorderRadius.circular(12),
-                              border: Border.all(
-                                color: AppColors.primaryColor.withValues(alpha: 0.3),
-                                width: 1,
-                              ),
-                            ),
-                            child: Column(
-                              children: <Widget>[
-                                Text(
-                                  "Total Duration",
-                                  style: textTheme.displayLarge?.copyWith(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 24,
-                                    color: AppColors.primaryColor,
-                                  ),
-                                ),
-                                const SizedBox(height: 6),
-                                Text(
-                                  controller.formatTime(controller.seconds.value),
-                                  style: textTheme.displayLarge?.copyWith(
-                                    fontWeight: FontWeight.bold,
-                                    color: AppColors.primaryColor,
-                                  ),
-                                ),
-                                if (controller.activeSide.value.isNotEmpty)
-                                  Text(
-                                    'Active: ${controller.activeSide.value} side',
-                                    style: textTheme.bodyMedium?.copyWith(
-                                      color: AppColors.primaryColor,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                              ],
+                  () => Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    decoration: BoxDecoration(
+                      color: AppColors.primaryColor.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(
+                        color: AppColors.primaryColor.withValues(alpha: 0.3),
+                        width: 1,
+                      ),
+                    ),
+                    child: Column(
+                      children: <Widget>[
+                        Text(
+                          "Total Duration",
+                          style: textTheme.displayLarge?.copyWith(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 24,
+                            color: AppColors.primaryColor,
+                          ),
+                        ),
+                        const SizedBox(height: 6),
+                        Text(
+                          controller.formatTime(controller.seconds.value),
+                          style: textTheme.displayLarge?.copyWith(
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.primaryColor,
+                          ),
+                        ),
+                        if (controller.activeSide.value.isNotEmpty)
+                          Text(
+                            'Active: ${controller.activeSide.value} side',
+                            style: textTheme.bodyMedium?.copyWith(
+                              color: AppColors.primaryColor,
+                              fontWeight: FontWeight.w500,
                             ),
                           ),
+                      ],
+                    ),
+                  ),
                 ),
               ),
 
-              SizedBox(height: Get.height * 0.08),
+              SizedBox(height: Get.height * 0.06),
 
               // Display separate times for both sides
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: Obx(
-                  () =>
-                      controller.seconds.value == 0
-                          ? const SizedBox.shrink()
-                          : Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: <Widget>[
-                              Column(
-                                children: <Widget>[
-                                  Text(
-                                    'Left Side',
-                                    style: textTheme.bodyLarge?.copyWith(
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                  Text(
-                                    controller.formatTime(controller.leftSideSeconds.value),
-                                    style: textTheme.displayMedium?.copyWith(
-                                      fontWeight: FontWeight.bold,
-                                      color: AppColors.primaryColor,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                children: <Widget>[
-                                  Text(
-                                    'Right Side',
-                                    style: textTheme.bodyLarge?.copyWith(
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                  Text(
-                                    controller.formatTime(controller.rightSideSeconds.value),
-                                    style: textTheme.displayMedium?.copyWith(
-                                      fontWeight: FontWeight.bold,
-                                      color: AppColors.primaryColor,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
+                  () => Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      Column(
+                        children: <Widget>[
+                          Text(
+                            'Left Side',
+                            style: textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.w500),
                           ),
+                          Text(
+                            controller.formatTime(controller.leftSideSeconds.value),
+                            style: textTheme.displayMedium?.copyWith(
+                              fontWeight: FontWeight.bold,
+                              color: AppColors.primaryColor,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        children: <Widget>[
+                          Text(
+                            'Right Side',
+                            style: textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.w500),
+                          ),
+                          Text(
+                            controller.formatTime(controller.rightSideSeconds.value),
+                            style: textTheme.displayMedium?.copyWith(
+                              fontWeight: FontWeight.bold,
+                              color: AppColors.primaryColor,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
 
@@ -262,19 +253,4 @@ class AddBreastfeeding extends StatelessWidget {
       ),
     );
   }
-}
-
-class BreastFeedingTiming {
-  final int leftBreastTime;
-  final int rightBreastTime;
-  final int totalTime;
-  final DateTime registeredTime;
-
-  // Constructor
-  BreastFeedingTiming({
-    required this.leftBreastTime,
-    required this.rightBreastTime,
-    required this.totalTime,
-    DateTime? registeredTime,
-  }) : registeredTime = registeredTime ?? DateTime.now();
 }
