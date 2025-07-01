@@ -28,8 +28,8 @@ class MyApp extends StatelessWidget {
       //     }
       //   },
       // ),
-      home: FeedingHomepage(),
       theme: AppTheme.defaultThemeData,
+      home: const FeedingHomepage(),
       initialBinding: ControllerBinder(),
       debugShowCheckedModeBanner: false,
     );

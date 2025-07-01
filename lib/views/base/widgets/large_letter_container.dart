@@ -30,13 +30,14 @@ class LargeLetterContainer extends StatelessWidget {
             ),
           ],
           shape: BoxShape.circle,
-          color: AppColors.iconBackground,
+          color: letter == 'Stop' ? Colors.redAccent : AppColors.iconBackground,
           border: Border.all(color: Colors.grey),
         ),
         child: Center(
           child: Text(
             letter,
             style: textTheme.displayMedium?.copyWith(
+              color: letter == 'Stop' ? Colors.white : AppColors.primaryColor,
               fontWeight: FontWeight.w700,
               fontSize: 120 / 3.5,
             ),

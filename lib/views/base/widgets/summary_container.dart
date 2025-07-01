@@ -22,7 +22,9 @@ class SummaryContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-      width: Get.width * 0.45,
+      // width: Get.width * 0.45,
+      // width: MediaQuery.of(context).size.width * 0.45,
+      width:180,
       height: 90,
       decoration: BoxDecoration(
         color: Colors.white,
