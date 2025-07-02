@@ -321,6 +321,7 @@ class _CalendarViewState extends State<CalendarView> {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Row(
             children: <Widget>[
+
               Expanded(
                 child: ElevatedButton.icon(
                   onPressed: _showDatePicker,

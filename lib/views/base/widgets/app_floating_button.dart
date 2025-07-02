@@ -32,7 +32,7 @@ class AppFloatingButton extends StatelessWidget {
 }
 
 class CircleLetter extends StatelessWidget {
-  const CircleLetter({super.key, this.radius = 12, this.letter = 'L'});
+  const CircleLetter({super.key, this.radius = 14, this.letter = 'L'});
 
   final double radius;
 

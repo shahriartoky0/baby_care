@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:together_baby/utilities/app_theme.dart';
 import 'package:together_baby/views/screens/auth/sign_in_page.dart';
+import 'package:together_baby/views/screens/feeding/breastfeeding/breast_feeding_time_saving.dart';
  import 'package:together_baby/views/screens/feeding/feeding_homepage.dart';
 import 'package:together_baby/views/screens/home/home_screen.dart';
 import 'package:together_baby/views/screens/main_bottom_nav.dart';
@@ -30,6 +31,8 @@ class MyApp extends StatelessWidget {
       // ),
       theme: AppTheme.defaultThemeData,
       home: const FeedingHomepage(),
+      // home:   BreastFeedingTimeSavingScreen(),
+      // home: const SignInPage(),
       initialBinding: ControllerBinder(),
       debugShowCheckedModeBanner: false,
     );

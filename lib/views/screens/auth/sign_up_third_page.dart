@@ -74,7 +74,7 @@ class _SignUpThirdPageState extends State<SignUpThirdPage> {
               Text('When was tuba born?', style: textTheme.displayLarge),
 
               const SizedBox(height: 32),
-              Text('Baby Name', style: Theme.of(context).textTheme.headlineMedium),
+              Text('Baby Birth Date', style: Theme.of(context).textTheme.headlineMedium),
               const SizedBox(height: 12),
               AppCustomContainerField(
                 containerChild: ReusableDatePickerField(

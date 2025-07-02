@@ -52,5 +52,7 @@ class AppTheme {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
       ),
     ),
+    dividerColor: Colors.grey,
+    dividerTheme: DividerThemeData(color: Colors.grey)
   );
 }

@@ -70,7 +70,9 @@ class _MyTextFormFieldWithIconState extends State<MyTextFormFieldWithIcon> {
 
   /// Default suffix icon for password toggle
   Widget? _buildDefaultSuffixIcon() {
-    if (!widget.isPassword) return null;
+    if (!widget.isPassword) {
+      return null;
+    }
     return IconButton(
       icon: Icon(
         _obscureText ? Icons.visibility_off : Icons.visibility,

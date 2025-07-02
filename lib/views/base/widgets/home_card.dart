@@ -20,7 +20,7 @@ class HomeCard extends StatelessWidget {
     required this.cardInnerColor,
     this.borderColor = AppColors.modalIconOuterColor,
     required this.iconPressed,
-    this.iconSize = 28,
+    this.iconSize = 26,
   });
 
   final TextTheme textTheme;
@@ -50,7 +50,7 @@ class HomeCard extends StatelessWidget {
             child: Container(
               width: Get.width * 0.35,
               padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
-              height: 180,
+              height: 150,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: const BorderRadius.only(
@@ -83,7 +83,7 @@ class HomeCard extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 8),
               width: Get.width * 0.15,
 
-              height: 180,
+              height: 150,
               decoration: BoxDecoration(
                 color: cardInnerColor,
                 borderRadius: const BorderRadius.only(
@@ -119,8 +119,8 @@ class HomeCard extends StatelessWidget {
                       onTap: addPressed,
                       child: CustomSvgImage(
                         assetName: AppIcons.addIcon,
-                        width: 26,
-                        height: 26,
+                        width: 24,
+                        height: 24,
                         color: Colors.white,
                       ),
                     ),

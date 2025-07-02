@@ -6,6 +6,8 @@ import '../../../../controller/breast_feeding_controller.dart';
 import '../../../../model/timer_measure_class.dart';
 import '../../../base/widgets/app_bar.dart';
 import '../../../base/widgets/large_letter_container.dart';
+import 'breast_feeding_time_saving.dart';
+import 'feeding_manual_time_taking.dart';
 
 class AddBreastfeeding extends StatelessWidget {
   AddBreastfeeding({super.key});
@@ -22,6 +24,8 @@ class AddBreastfeeding extends StatelessWidget {
         () =>
             controller.seconds.value == 0
                 ? const SizedBox.shrink()
+                : controller.isRunning.value
+                ? const SizedBox.shrink()
                 : Container(
                   margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 8.0),
                   child: PrimaryButton(
@@ -29,9 +33,10 @@ class AddBreastfeeding extends StatelessWidget {
                     onPressed: () {
                       final TimerMeasureClass breastFeedingTiming = TimerMeasureClass(
                         leftBreastTime: controller.leftSideSeconds.value,
-                        rightBreastTime: controller.leftSideSeconds.value,
+                        rightBreastTime: controller.rightSideSeconds.value,
                         totalTime: controller.seconds.value,
                       );
+                      Get.to(() => BreastFeedingTimeSavingScreen(), arguments: breastFeedingTiming);
                     },
                   ),
                 ),
@@ -231,7 +236,7 @@ class AddBreastfeeding extends StatelessWidget {
                         ? Center(
                           child: TextButton.icon(
                             onPressed: () {
-                              // Handle manual entry
+                              Get.to(() => BreastFeedingManualTimeScreen());
                             },
                             label: Text(
                               'Manual Entry',

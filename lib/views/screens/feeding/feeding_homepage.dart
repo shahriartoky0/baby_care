@@ -25,7 +25,7 @@ class FeedingHomepage extends StatelessWidget {
       floatingActionButton: AppFloatingButton(
         iconPath: AppIcons.feedingIcon,
         onPressed: () {
-          Get.to(() =>  AddBreastfeeding());
+          Get.to(() => AddBreastfeeding());
         },
       ),
       body: SingleChildScrollView(
