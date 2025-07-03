@@ -10,6 +10,7 @@ class MyTextFormFieldWithIcon extends StatefulWidget {
   final ValueChanged<String>? onChanged;
   final FormFieldValidator<String>? validator;
   final TextInputType? keyBoardType;
+  final Color borderColor;
 
   const MyTextFormFieldWithIcon({
     super.key,
@@ -21,6 +22,7 @@ class MyTextFormFieldWithIcon extends StatefulWidget {
     this.onChanged,
     this.validator,
     this.keyBoardType,
+    this.borderColor = AppColors.primaryColor,
   });
 
   @override
@@ -50,8 +52,8 @@ class _MyTextFormFieldWithIconState extends State<MyTextFormFieldWithIcon> {
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),
             // Same borderRadius for consistency
-            borderSide: const BorderSide(
-              color: AppColors.primaryColor, // Apply the primary color
+            borderSide: BorderSide(
+              color: widget.borderColor, // Apply the primary color
             ),
           ),
           hintText: widget.formHintText,

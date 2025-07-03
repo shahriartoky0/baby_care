@@ -18,17 +18,17 @@ class NoteTextField extends StatelessWidget {
         hintText: 'Add a note here',
 
         border: OutlineInputBorder(
-          borderSide: const BorderSide(color: Colors.grey),
+          borderSide:   BorderSide(color: Colors.grey.shade300),
           borderRadius: BorderRadius.circular(12),
         ),
         enabledBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Colors.grey),
+          borderSide:   BorderSide(color: Colors.grey.shade300),
           borderRadius: BorderRadius.circular(12),
         ),
-        focusedBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: Colors.grey),
-          borderRadius: BorderRadius.circular(12),
-        ),
+        // focusedBorder: OutlineInputBorder(
+        //   borderSide:   BorderSide(color: Colors.grey.shade300),
+        //   borderRadius: BorderRadius.circular(12),
+        // ),
       ),
     );
   }
