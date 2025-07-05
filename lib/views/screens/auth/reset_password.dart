@@ -93,10 +93,13 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                       clearingTextField();
                       if (_resetPassTEController.text.trim() !=
                           _confirmPassTeController.text.trim()) {
-                        CustomToast().showToast(
-                          context: context,
+                        ToastManager.show(
                           message: AppString.passwordsDoNotMatch,
-                          isError: true,
+                          backgroundColor: AppColors.red,
+                          textColor: Colors.white,
+                          animationDuration: const Duration(milliseconds: 500),
+                          animationCurve: Curves.easeInSine,
+                          duration: const Duration(seconds: 1),
                         );
                         return;
                       }

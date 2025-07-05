@@ -4,12 +4,14 @@ class PrimaryButton extends StatelessWidget {
   final String buttonText;
   final VoidCallback onPressed;
   final num width;
+  final double radius;
 
   const PrimaryButton({
     super.key,
     required this.buttonText,
     required this.onPressed,
     this.width = double.infinity,
+    this.radius = 24,
   });
 
   @override
@@ -17,7 +19,7 @@ class PrimaryButton extends StatelessWidget {
     return Container(
       width: width.toDouble(),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(24),
+        borderRadius: BorderRadius.circular(radius),
         // boxShadow: const <BoxShadow>[
         //   BoxShadow(
         //     color: Color(0xFF529AD9),

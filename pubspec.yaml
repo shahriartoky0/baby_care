@@ -88,6 +88,8 @@ flutter:
     - assets/fonts/
     - assets/icons/
     - assets/images/
+    - assets/images/food/
+    - assets/images/reaction/
 
 
 

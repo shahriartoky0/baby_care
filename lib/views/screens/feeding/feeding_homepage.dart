@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:together_baby/views/base/components/app_icon.dart';
 import 'package:together_baby/views/base/widgets/calander_view.dart';
+import 'package:together_baby/views/screens/feeding/solids/add_solid.dart';
 import 'package:together_baby/views/screens/feeding/solids/solid_homepage.dart';
 import '../../../controller/button_controller.dart';
 import '../../base/widgets/app_bar.dart';
@@ -31,8 +32,11 @@ class FeedingHomepage extends StatelessWidget {
           onPressed: () {
             if (controller.selectedIndex.value == 0) {
               Get.to(() => AddBreastfeeding());
-            }  else if (controller.selectedIndex.value == 1) {
+            }
+            else if (controller.selectedIndex.value == 1) {
               Get.to(() => AddFormulaPage());
+            }else if (controller.selectedIndex.value == 2) {
+              Get.to(() => AddSolidPage());
             }
           },
         ),

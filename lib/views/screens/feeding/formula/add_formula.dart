@@ -6,10 +6,7 @@ import 'package:together_baby/views/base/components/primary_button.dart';
 import '../../../../controller/manual_time_controller.dart';
 import '../../../base/components/custom_dropdown.dart';
 import '../../../base/components/custom_text_field.dart';
-import '../../../base/components/reusable_date_picker_field.dart';
 import '../../../base/widgets/app_bar.dart';
-import '../../../base/widgets/app_custom_textfield.dart';
-import '../../../base/widgets/app_floating_button.dart';
 import '../../../base/widgets/note_textfield.dart';
 import '../../../base/widgets/time_picker.dart';
 
@@ -33,7 +30,9 @@ class AddFormulaPage extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: SizedBox(
         width: MediaQuery.of(context).size.width * .98,
-        child: PrimaryButton(buttonText: 'Save', onPressed: () {}),
+        child: PrimaryButton(
+
+            buttonText: 'Save', onPressed: () {}),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -58,13 +57,13 @@ class AddFormulaPage extends StatelessWidget {
                           children: <Widget>[
                             // Left Side Time Pickers
                             TimePickerWidget(
+                              showTimeIcon: true,
                               label: 'Time',
                               time: timeController.startLeftTime,
                               onTimeSelected: timeController.updateStartLeftTime,
                             ),
 
-                            const Divider(),
-                            SizedBox(height: 12),
+                            const SizedBox(height: 12),
                             CustomDropdown<String>(
                               backgroundColor: AppColors.white,
                               dropdownColor: AppColors.pageColor,

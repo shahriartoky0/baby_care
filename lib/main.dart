@@ -8,6 +8,7 @@ import 'package:together_baby/views/screens/feeding/breastfeeding/breast_feeding
 import 'package:together_baby/views/screens/home/home_screen.dart';
 import 'package:together_baby/views/screens/main_bottom_nav.dart';
 
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 void main() {
   runApp(const MyApp());
 }
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
       // ),
       theme: AppTheme.defaultThemeData,
       home: const FeedingHomepage(),
+      navigatorKey: navigatorKey,
       // home:   BreastFeedingTimeSavingScreen(),
       // home: const SignInPage(),
       initialBinding: ControllerBinder(),
