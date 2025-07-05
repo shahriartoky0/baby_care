@@ -13,52 +13,69 @@ class SelectButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(() {
       return Container(
+        width: double.infinity,
         padding: const EdgeInsets.symmetric(vertical: 6),
         margin: const EdgeInsets.symmetric(horizontal: 6),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(24),
           border: Border.all(color: AppColors.primaryColor.withValues(alpha: 0.4)),
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: List.generate(buttonLabels.length, (int index) {
-            return GestureDetector(
-              onTap: () {
-                controller.updateSelectedIndex(index);
-              },
-              child: Container(
-                height: 35,
-                width: Get.width * 0.25,
-                // margin: const EdgeInsets.symmetric(horizontal: 8),
-                // padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-                decoration: BoxDecoration(
-                  color:
-                  controller.selectedIndex.value == index
-                      ? AppColors
-                      .primaryColor // Active button color
-                      : Colors.transparent,
-                  borderRadius: BorderRadius.circular(30),
-                  border: Border.all(
-                    width: 1.5,
-                    color:
-                    controller.selectedIndex.value == index
-                        ? AppColors.primaryColor
-                        : Colors.grey,
-                  ),
-                ),
-                child: Center(
-                  child: Text(
-                    buttonLabels[index],
-                    style: TextStyle(
-                      color: controller.selectedIndex.value == index ? Colors.white : Colors.black,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 14,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(24),
+
+          // To ensure the border has rounded corners
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Container(
+              constraints: BoxConstraints(minWidth: MediaQuery.of(context).size.width),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: List.generate(buttonLabels.length, (int index) {
+                  return GestureDetector(
+                    onTap: () {
+                      controller.updateSelectedIndex(index);
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 2),
+
+                      height: 35,
+                      width: Get.width * 0.25,
+                      // margin: const EdgeInsets.symmetric(horizontal: 8),
+                      // padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                      decoration: BoxDecoration(
+                        color:
+                            controller.selectedIndex.value == index
+                                ? AppColors
+                                    .primaryColor // Active button color
+                                : Colors.transparent,
+                        borderRadius: BorderRadius.circular(30),
+                        border: Border.all(
+                          width: 1.5,
+                          color:
+                              controller.selectedIndex.value == index
+                                  ? AppColors.primaryColor
+                                  : Colors.grey,
+                        ),
+                      ),
+                      child: Center(
+                        child: Text(
+                          buttonLabels[index],
+                          style: TextStyle(
+                            color:
+                                controller.selectedIndex.value == index
+                                    ? Colors.white
+                                    : Colors.black,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 14,
+                          ),
+                        ),
+                      ),
                     ),
-                  ),
-                ),
+                  );
+                }),
               ),
-            );
-          }),
+            ),
+          ),
         ),
       );
     });

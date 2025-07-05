@@ -54,6 +54,7 @@ class TimePickerWidget extends StatelessWidget {
 
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12),
+      margin: const EdgeInsets.symmetric(vertical: 12),
       decoration: BoxDecoration(border: Border.all(), borderRadius: BorderRadius.circular(16)),
       child: Row(
         children: <Widget>[

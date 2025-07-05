@@ -5,10 +5,12 @@ import 'package:together_baby/utilities/app_colors.dart';
 import 'package:together_baby/utilities/images/app_images.dart';
 import 'package:together_baby/views/base/components/app_icon.dart';
 import 'package:together_baby/views/base/components/custom_svg.dart';
+import 'package:together_baby/views/screens/diaper/diaper_homepage.dart';
 import 'package:together_baby/views/screens/notification_page.dart';
 
 import '../../base/components/image_carousel.dart';
 import '../../base/widgets/home_card.dart';
+import '../pumping/pumping_homepage.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -74,7 +76,9 @@ class HomeScreen extends StatelessWidget {
                     iconPath: AppIcons.pumpingIcon,
                     addPressed: () {},
                     cardInnerColor: AppColors.pumpCardColor,
-                    iconPressed: () {},
+                    iconPressed: () {
+                      Get.to(() => PumpingHomepage(selectedDate: DateTime.now()));
+                    },
                     iconSize: 32,
                   ),
                   HomeCard(
@@ -87,7 +91,9 @@ class HomeScreen extends StatelessWidget {
                     iconPath: AppIcons.diaperIcon,
                     addPressed: () {},
                     cardInnerColor: AppColors.diaperCardColor,
-                    iconPressed: () {},
+                    iconPressed: () {
+                      Get.to(() => DiaperHomePage(selectedDate: DateTime.now()));
+                    },
                   ),
                   HomeCard(
                     textTheme: textTheme,

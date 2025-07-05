@@ -6,6 +6,7 @@ import 'package:together_baby/views/base/components/custom_svg.dart';
 import 'package:together_baby/views/screens/home/home_screen.dart';
 
 import '../../utilities/app_colors.dart';
+import 'diaper/diaper_homepage.dart';
 
 class MainBottomNavScreen extends StatefulWidget {
   const MainBottomNavScreen({super.key});
@@ -126,8 +127,8 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
                   //   color: Colors.black87,
                   // ),
                   child: CustomSvgImage(
-                    height: selectedIndex == index ? 32 :28,
-                    assetName:  _icons[index],
+                    height: selectedIndex == index ? 32 : 28,
+                    assetName: _icons[index],
                     color: selectedIndex == index ? AppColors.primaryColor : Colors.grey,
                   ),
                 ),

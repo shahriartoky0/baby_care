@@ -3,12 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:together_baby/utilities/app_theme.dart';
 import 'package:together_baby/views/screens/auth/sign_in_page.dart';
+import 'package:together_baby/views/screens/diaper/diaper_homepage.dart';
 import 'package:together_baby/views/screens/feeding/breastfeeding/breast_feeding_time_saving.dart';
- import 'package:together_baby/views/screens/feeding/feeding_homepage.dart';
+import 'package:together_baby/views/screens/feeding/feeding_homepage.dart';
 import 'package:together_baby/views/screens/home/home_screen.dart';
 import 'package:together_baby/views/screens/main_bottom_nav.dart';
+import 'package:together_baby/views/screens/pumping/pumping_homepage.dart';
+import 'package:together_baby/views/screens/sleep/sleeping_homepage.dart';
+
+import 'controller/breast_feeding_controller.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+
 void main() {
   runApp(const MyApp());
 }
@@ -31,9 +37,11 @@ class MyApp extends StatelessWidget {
       //   },
       // ),
       theme: AppTheme.defaultThemeData,
-      home: const FeedingHomepage(),
       navigatorKey: navigatorKey,
-      // home:   BreastFeedingTimeSavingScreen(),
+      // home: const MainBottomNavScreen(),
+      // home: const FeedingHomepage(),
+      // home: DiaperHomePage(selectedDate: DateTime.now()),
+      home: SleepHomepage(selectedDate: DateTime.now()),
       // home: const SignInPage(),
       initialBinding: ControllerBinder(),
       debugShowCheckedModeBanner: false,
@@ -43,5 +51,7 @@ class MyApp extends StatelessWidget {
 
 class ControllerBinder extends Bindings {
   @override
-  void dependencies() {}
+  void dependencies() {
+    Get.put(BreastfeedingController());
+  }
 }
