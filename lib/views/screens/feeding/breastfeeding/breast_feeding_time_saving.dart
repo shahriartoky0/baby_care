@@ -108,7 +108,7 @@ class TileRow extends StatelessWidget {
   final String leadingText;
 
   final String trailingText;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {

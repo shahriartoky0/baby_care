@@ -3,13 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:together_baby/utilities/app_theme.dart';
 import 'package:together_baby/views/screens/auth/sign_in_page.dart';
+import 'package:together_baby/views/screens/baby_care/baby_care_homepage.dart';
 import 'package:together_baby/views/screens/diaper/diaper_homepage.dart';
 import 'package:together_baby/views/screens/feeding/breastfeeding/breast_feeding_time_saving.dart';
 import 'package:together_baby/views/screens/feeding/feeding_homepage.dart';
+import 'package:together_baby/views/screens/growth/growth_homepage.dart';
 import 'package:together_baby/views/screens/home/home_screen.dart';
 import 'package:together_baby/views/screens/main_bottom_nav.dart';
+import 'package:together_baby/views/screens/medicine/medicine_homepage.dart';
 import 'package:together_baby/views/screens/pumping/pumping_homepage.dart';
 import 'package:together_baby/views/screens/sleep/sleeping_homepage.dart';
+import 'package:together_baby/views/screens/vaccine/vaccine_homepage.dart';
 
 import 'controller/breast_feeding_controller.dart';
 
@@ -41,8 +45,12 @@ class MyApp extends StatelessWidget {
       // home: const MainBottomNavScreen(),
       // home: const FeedingHomepage(),
       // home: DiaperHomePage(selectedDate: DateTime.now()),
-      home: SleepHomepage(selectedDate: DateTime.now()),
+      // home: SleepHomepage(selectedDate: DateTime.now()),
+      home: const BabyCareHomepage(),
       // home: const SignInPage(),
+      // home: MedicineHomepage(selectedDate: DateTime.now()),
+      // home: VaccineHomepage(selectedDate: DateTime.now()),
+      // home: GrowthHomepage(selectedDate: DateTime.now()),
       initialBinding: ControllerBinder(),
       debugShowCheckedModeBanner: false,
     );

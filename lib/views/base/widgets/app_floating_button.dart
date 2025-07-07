@@ -23,7 +23,7 @@ class AppFloatingButton extends StatelessWidget {
           child: CircleAvatar(
             backgroundColor: AppColors.primaryColor,
             radius: 28,
-            child: CustomSvgImage(assetName: iconPath, width: 30, height: 30),
+            child: CustomSvgImage(assetName: iconPath, width: 30, height: 30, color: Colors.white),
           ),
         ),
       ),

@@ -87,6 +87,7 @@ flutter:
   assets:
     - assets/fonts/
     - assets/icons/
+    - assets/icons/baby_care/
     - assets/images/
     - assets/images/food/
     - assets/images/reaction/

@@ -29,4 +29,11 @@ class AppIcons {
   static String thumbIcon = "$baseUrl/thumb_icon.svg";
   static String girlIcon = "$baseUrl/girl_icon.svg";
   static String boyIcon = "$baseUrl/boy_icon.svg";
+  static String soutingIcon = "$baseUrl/baby_care/southing.svg";
+  static String babyCuesIcon = "$baseUrl/baby_care/baby_cues.svg";
+  static String soundIcon = "$baseUrl/baby_care/sound.svg";
+  static String cueListIcon = "$baseUrl/cue_list_icon.svg";
+  static String playbackIcon = "$baseUrl/playback.svg";
+  static String playIcon = "$baseUrl/play_icon.svg";
+  static String pauseIcon = "$baseUrl/pause_icon.svg";
   }

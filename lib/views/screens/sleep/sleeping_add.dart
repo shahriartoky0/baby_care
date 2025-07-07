@@ -5,7 +5,7 @@ import 'package:together_baby/views/base/components/primary_button.dart';
 import 'package:together_baby/views/screens/pumping/pumping_manual_time_taking.dart';
 import 'package:together_baby/views/screens/pumping/pumping_time_taking.dart';
 import 'package:together_baby/views/screens/sleep/sleep_manual_time_taking.dart';
-import 'package:together_baby/views/screens/sleep/sleep_time_taking.dart';
+import 'package:together_baby/views/screens/sleep/sleep_time_saving.dart';
 import '../../../../controller/breast_feeding_controller.dart';
 import '../../../../model/timer_measure_class.dart';
 import '../../base/widgets/app_bar.dart';
@@ -33,12 +33,14 @@ class AddSleeping extends StatelessWidget {
                   child: PrimaryButton(
                     buttonText: 'Next',
                     onPressed: () {
-                      final TimerMeasureClass breastFeedingTiming = TimerMeasureClass(
+                      final TimerMeasureClass sleepTiming = TimerMeasureClass(
+                        sleepStopTime: controller.sleepStopTime.value,
+                        pressedTime: controller.takenTime.value,
                         leftBreastTime: controller.leftSideSeconds.value,
                         rightBreastTime: controller.rightSideSeconds.value,
                         totalTime: controller.seconds.value,
                       );
-                      Get.to(() => SleepingTimeSavingScreen(), arguments: breastFeedingTiming);
+                      Get.to(() => SleepingTimeSavingScreen(), arguments: sleepTiming);
                     },
                   ),
                 ),
@@ -76,7 +78,7 @@ class AddSleeping extends StatelessWidget {
                         ),
                         const SizedBox(height: 6),
                         Text(
-                          controller.formatTime(controller.leftSideSeconds.value),
+                          controller.formatTimeHour(controller.leftSideSeconds.value),
                           style: textTheme.displayLarge?.copyWith(
                             fontWeight: FontWeight.bold,
                             color: AppColors.primaryColor,
@@ -84,7 +86,7 @@ class AddSleeping extends StatelessWidget {
                         ),
                         const SizedBox(height: 3),
                         Text(
-                          ' MIN : SEC',
+                          ' HOUR : MIN : SEC',
                           style: textTheme.bodyMedium?.copyWith(
                             color: AppColors.primaryColor,
                             fontWeight: FontWeight.w500,
@@ -123,11 +125,17 @@ class AddSleeping extends StatelessWidget {
                                   letter: 'Stop',
                                   onTap: () {
                                     controller.startTimer('L');
+                                    controller.sleepStopTime.value = DateTime.now();
                                   },
                                 )
                                 : LargeLetterContainer(
                                   letter: 'Start',
-                                  onTap: () => controller.startTimer('L'),
+                                  onTap: () {
+                                    controller.startTimer('L');
+                                    if (controller.seconds.value < 1) {
+                                      controller.takenTime.value = DateTime.now();
+                                    }
+                                  },
                                 ),
                       ),
                     ),

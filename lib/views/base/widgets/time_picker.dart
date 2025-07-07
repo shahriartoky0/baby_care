@@ -11,6 +11,7 @@ class TimePickerWidget extends StatelessWidget {
   final Rx<DateTime> time;
   final Function(DateTime) onTimeSelected;
   final bool showTimeIcon;
+  final bool showBorder;
 
   const TimePickerWidget({
     super.key,
@@ -18,6 +19,7 @@ class TimePickerWidget extends StatelessWidget {
     required this.time,
     required this.onTimeSelected,
     this.showTimeIcon = false,
+    this.showBorder = true,
   });
 
   Future<void> _selectTime(BuildContext context) async {
@@ -55,7 +57,10 @@ class TimePickerWidget extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12),
       margin: const EdgeInsets.symmetric(vertical: 12),
-      decoration: BoxDecoration(border: Border.all(), borderRadius: BorderRadius.circular(16)),
+      decoration:
+          showBorder
+              ? BoxDecoration(border: Border.all(), borderRadius: BorderRadius.circular(16))
+              : const BoxDecoration(),
       child: Row(
         children: <Widget>[
           if (showTimeIcon)

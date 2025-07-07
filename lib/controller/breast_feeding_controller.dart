@@ -1,4 +1,3 @@
-
 import 'dart:async';
 
 import 'package:get/get.dart';
@@ -12,6 +11,10 @@ class BreastfeedingController extends GetxController {
   RxString activeSide = ''.obs;
   RxInt leftSideSeconds = 0.obs;
   RxInt rightSideSeconds = 0.obs;
+
+  // Extra Variables =====>
+  Rx<DateTime> takenTime = DateTime.now().obs;
+  Rx<DateTime> sleepStopTime = DateTime.now().obs;
 
   void startTimer(String side) {
     if (isRunning.value && activeSide.value == side) {
@@ -63,6 +66,28 @@ class BreastfeedingController extends GetxController {
     final int minutes = seconds ~/ 60;
     final int remainingSeconds = seconds % 60;
     return '${minutes.toString().padLeft(2, '0')}:${remainingSeconds.toString().padLeft(2, '0')}';
+  }
+
+  String formatTimeHour(int seconds) {
+    final int hours = seconds ~/ 3600;
+    final int minutes = (seconds % 3600) ~/ 60;
+    final int remainingSeconds = seconds % 60;
+
+    return '${hours.toString().padLeft(2, '0')}:${minutes.toString().padLeft(2, '0')}:${remainingSeconds.toString().padLeft(2, '0')}';
+  }
+
+  String formatCurrentTime({required DateTime time}) {
+    final DateTime now = time;
+    final int hours = now.hour;
+    final int minutes = now.minute;
+    final int seconds = now.second;
+
+    return '${hours.toString().padLeft(2, '0')}:${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}';
+  }
+
+  /// Calculate the END time from duration in seconds ====>
+  DateTime calculateEndTime(DateTime startTime, int secondsToAdd) {
+    return startTime.add(Duration(seconds: secondsToAdd));
   }
 
   @override
