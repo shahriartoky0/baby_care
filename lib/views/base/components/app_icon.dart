@@ -1,5 +1,6 @@
 class AppIcons {
   AppIcons._();
+
   static String baseUrl = "assets/icons";
   static String addIcon = "$baseUrl/add_icon.svg";
   static String bloodIcon = "$baseUrl/blood_icon.svg";
@@ -36,4 +37,11 @@ class AppIcons {
   static String playbackIcon = "$baseUrl/playback.svg";
   static String playIcon = "$baseUrl/play_icon.svg";
   static String pauseIcon = "$baseUrl/pause_icon.svg";
-  }
+  static String bookIcon = "$baseUrl/settings_book_icon.svg";
+  static String informationIcon = "$baseUrl/settings_information_icon.svg";
+  static String keyIcon = "$baseUrl/settings_key_icon.svg";
+  static String logoutIcon = "$baseUrl/settings_logout_icon.svg";
+  static String memoryIcon = "$baseUrl/settings_memory_icon.svg";
+  static String privacyIcon = "$baseUrl/settings_privacy_icon.svg";
+  static String termsIcon = "$baseUrl/settings_terms_icon.svg";
+}

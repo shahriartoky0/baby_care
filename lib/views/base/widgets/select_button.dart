@@ -29,6 +29,7 @@ class SelectButtonWidget extends StatelessWidget {
             child: Container(
               constraints: BoxConstraints(minWidth: MediaQuery.of(context).size.width),
               child: Row(
+                spacing: 15,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: List.generate(buttonLabels.length, (int index) {
                   return GestureDetector(

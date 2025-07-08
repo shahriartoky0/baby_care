@@ -3,7 +3,11 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:together_baby/views/base/components/app_icon.dart';
 import 'package:together_baby/views/base/components/custom_svg.dart';
+import 'package:together_baby/views/screens/baby_care/baby_care_homepage.dart';
 import 'package:together_baby/views/screens/home/home_screen.dart';
+import 'package:together_baby/views/screens/milestone/milestone_homepage.dart';
+import 'package:together_baby/views/screens/planner/planner_homepage.dart';
+import 'package:together_baby/views/screens/profile/profile_homepage.dart';
 
 import '../../utilities/app_colors.dart';
 import 'diaper/diaper_homepage.dart';
@@ -21,10 +25,10 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
 
   final List<Widget> _screens = <Widget>[
     const HomeScreen(),
-    const HomeScreen(),
-    const HomeScreen(),
-    const HomeScreen(),
-    const HomeScreen(),
+    const BabyCareHomepage(),
+    PlannerHomePage(selectedDate: DateTime.now()),
+    const MilestoneHomepage(),
+    const ProfileHomepage(),
   ];
 
   // final List<IconData> _icons = <IconData>[

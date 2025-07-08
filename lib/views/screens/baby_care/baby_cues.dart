@@ -39,50 +39,53 @@ class FAQPage extends StatelessWidget {
 
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          children: <Widget>[
-            const AppBarRegular(title: 'Baby Cues'),
-
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 12),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: Colors.grey, width: 1.2),
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Container(
-                    padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
-                    width: double.infinity,
-                    decoration: const BoxDecoration(
-                      color: AppColors.primaryColor,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(12),
-                        topRight: Radius.circular(12),
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              const AppBarRegular(title: 'Baby Cues'),
+          
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 12),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: Colors.grey, width: 1.2),
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    Container(
+                      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
+                      width: double.infinity,
+                      decoration: const BoxDecoration(
+                        color: AppColors.primaryColor,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(12),
+                          topRight: Radius.circular(12),
+                        ),
+                      ),
+                      child: Text(
+                        'Baby Cues and Their Meanings',
+                        textAlign: TextAlign.center,
+                        style: textTheme.labelMedium?.copyWith(fontWeight: FontWeight.bold),
                       ),
                     ),
-                    child: Text(
-                      'Baby Cues and Their Meanings',
-                      textAlign: TextAlign.center,
-                      style: textTheme.labelMedium?.copyWith(fontWeight: FontWeight.bold),
+                    ListView.builder(
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
+                      padding: EdgeInsets.all(16),
+                      itemCount: faqList.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return FAQItem(
+                          question: faqList[index]["question"]!,
+                          answer: faqList[index]["answer"]!,
+                        );
+                      },
                     ),
-                  ),
-                  ListView.builder(
-                    shrinkWrap: true,
-                    padding: EdgeInsets.all(16),
-                    itemCount: faqList.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return FAQItem(
-                        question: faqList[index]["question"]!,
-                        answer: faqList[index]["answer"]!,
-                      );
-                    },
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

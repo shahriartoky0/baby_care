@@ -5,8 +5,21 @@ import 'package:together_baby/utilities/app_colors.dart';
 import 'package:together_baby/utilities/images/app_images.dart';
 import 'package:together_baby/views/base/components/app_icon.dart';
 import 'package:together_baby/views/base/components/custom_svg.dart';
+import 'package:together_baby/views/screens/diaper/diaper_details.dart';
 import 'package:together_baby/views/screens/diaper/diaper_homepage.dart';
+import 'package:together_baby/views/screens/feeding/breastfeeding/add_breastfeeding.dart';
+import 'package:together_baby/views/screens/feeding/feeding_homepage.dart';
+import 'package:together_baby/views/screens/growth/growth_add_page.dart';
+import 'package:together_baby/views/screens/growth/growth_homepage.dart';
+import 'package:together_baby/views/screens/medicine/add_medicine.dart';
+import 'package:together_baby/views/screens/medicine/medicine_homepage.dart';
+import 'package:together_baby/views/screens/milestone/milestone_homepage.dart';
 import 'package:together_baby/views/screens/notification_page.dart';
+import 'package:together_baby/views/screens/pumping/pumping_add.dart';
+import 'package:together_baby/views/screens/sleep/sleeping_add.dart';
+import 'package:together_baby/views/screens/sleep/sleeping_homepage.dart';
+import 'package:together_baby/views/screens/vaccine/add_vaccine.dart';
+import 'package:together_baby/views/screens/vaccine/vaccine_homepage.dart';
 
 import '../../base/components/image_carousel.dart';
 import '../../base/widgets/home_card.dart';
@@ -62,9 +75,13 @@ class HomeScreen extends StatelessWidget {
                     history2: 'Breast',
                     history2Data: '__',
                     iconPath: AppIcons.feedingIcon,
-                    addPressed: () {},
+                    addPressed: () {
+                      Get.to(() => AddBreastfeeding());
+                    },
                     cardInnerColor: AppColors.feedCardColor,
-                    iconPressed: () {},
+                    iconPressed: () {
+                      Get.to(() => const FeedingHomepage());
+                    },
                   ),
                   HomeCard(
                     textTheme: textTheme,
@@ -74,7 +91,9 @@ class HomeScreen extends StatelessWidget {
                     history2: 'Duration',
                     history2Data: '__',
                     iconPath: AppIcons.pumpingIcon,
-                    addPressed: () {},
+                    addPressed: () {
+                      Get.to(() => AddPumping());
+                    },
                     cardInnerColor: AppColors.pumpCardColor,
                     iconPressed: () {
                       Get.to(() => PumpingHomepage(selectedDate: DateTime.now()));
@@ -89,7 +108,9 @@ class HomeScreen extends StatelessWidget {
                     history2: 'Duration',
                     history2Data: '__',
                     iconPath: AppIcons.diaperIcon,
-                    addPressed: () {},
+                    addPressed: () {
+                      Get.to(() => DiaperDetails());
+                    },
                     cardInnerColor: AppColors.diaperCardColor,
                     iconPressed: () {
                       Get.to(() => DiaperHomePage(selectedDate: DateTime.now()));
@@ -103,9 +124,13 @@ class HomeScreen extends StatelessWidget {
                     history2: 'Duration',
                     history2Data: '__',
                     iconPath: AppIcons.sleepingIcon,
-                    addPressed: () {},
+                    addPressed: () {
+                      Get.to(() => AddSleeping());
+                    },
                     cardInnerColor: AppColors.sleepCardColor,
-                    iconPressed: () {},
+                    iconPressed: () {
+                      Get.to(() => SleepHomepage(selectedDate: DateTime.now()));
+                    },
                   ),
                   HomeCard(
                     textTheme: textTheme,
@@ -115,9 +140,13 @@ class HomeScreen extends StatelessWidget {
                     history2: 'At',
                     history2Data: '__',
                     iconPath: AppIcons.medicineIcon,
-                    addPressed: () {},
+                    addPressed: () {
+                      Get.to(() => AddMedicinePage());
+                    },
                     cardInnerColor: AppColors.medicineCardColor,
-                    iconPressed: () {},
+                    iconPressed: () {
+                      Get.to(() => MedicineHomepage(selectedDate: DateTime.now()));
+                    },
                   ),
                   HomeCard(
                     textTheme: textTheme,
@@ -127,9 +156,13 @@ class HomeScreen extends StatelessWidget {
                     history2: 'On',
                     history2Data: '__',
                     iconPath: AppIcons.vaccineIcon,
-                    addPressed: () {},
+                    addPressed: () {
+                      Get.to(() => AddVaccinePage());
+                    },
                     cardInnerColor: AppColors.vaccineCardColor,
-                    iconPressed: () {},
+                    iconPressed: () {
+                      Get.to(() => VaccineHomepage(selectedDate: DateTime.now()));
+                    },
                   ),
                   HomeCard(
                     textTheme: textTheme,
@@ -139,9 +172,13 @@ class HomeScreen extends StatelessWidget {
                     history2: 'As on',
                     history2Data: '__',
                     iconPath: AppIcons.growthIcon,
-                    addPressed: () {},
+                    addPressed: () {
+                      Get.to(() => GrowthAddScreen());
+                    },
                     cardInnerColor: AppColors.growCardColor,
-                    iconPressed: () {},
+                    iconPressed: () {
+                      Get.to(() => GrowthHomepage(selectedDate: DateTime.now()));
+                    },
                   ),
                   HomeCard(
                     textTheme: textTheme,
@@ -151,9 +188,13 @@ class HomeScreen extends StatelessWidget {
                     history2: 'Baby is born',
                     history2Data: '__',
                     iconPath: AppIcons.milestoneIcon,
-                    addPressed: () {},
+                    addPressed: () {
+                      Get.to(() => MilestoneHomepage());
+                    },
                     cardInnerColor: AppColors.milestoneCardColor,
-                    iconPressed: () {},
+                    iconPressed: () {
+                      Get.to(() => MilestoneHomepage());
+                    },
                   ),
                 ],
               ),

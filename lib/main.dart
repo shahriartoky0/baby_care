@@ -11,6 +11,7 @@ import 'package:together_baby/views/screens/growth/growth_homepage.dart';
 import 'package:together_baby/views/screens/home/home_screen.dart';
 import 'package:together_baby/views/screens/main_bottom_nav.dart';
 import 'package:together_baby/views/screens/medicine/medicine_homepage.dart';
+import 'package:together_baby/views/screens/planner/planner_homepage.dart';
 import 'package:together_baby/views/screens/pumping/pumping_homepage.dart';
 import 'package:together_baby/views/screens/sleep/sleeping_homepage.dart';
 import 'package:together_baby/views/screens/vaccine/vaccine_homepage.dart';
@@ -42,11 +43,12 @@ class MyApp extends StatelessWidget {
       // ),
       theme: AppTheme.defaultThemeData,
       navigatorKey: navigatorKey,
-      // home: const MainBottomNavScreen(),
+      home: const MainBottomNavScreen(),
       // home: const FeedingHomepage(),
       // home: DiaperHomePage(selectedDate: DateTime.now()),
       // home: SleepHomepage(selectedDate: DateTime.now()),
-      home: const BabyCareHomepage(),
+      // home: const BabyCareHomepage(),
+      // home: PlannerHomePage(selectedDate: DateTime.now()),
       // home: const SignInPage(),
       // home: MedicineHomepage(selectedDate: DateTime.now()),
       // home: VaccineHomepage(selectedDate: DateTime.now()),
