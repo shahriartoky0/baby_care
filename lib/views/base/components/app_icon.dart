@@ -44,4 +44,6 @@ class AppIcons {
   static String memoryIcon = "$baseUrl/settings_memory_icon.svg";
   static String privacyIcon = "$baseUrl/settings_privacy_icon.svg";
   static String termsIcon = "$baseUrl/settings_terms_icon.svg";
+  static String splashImage = "$baseUrl/splash_image.svg";
+  static String logo = "$baseUrl/logo.svg";
 }

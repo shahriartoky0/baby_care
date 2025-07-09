@@ -14,6 +14,7 @@ import 'package:together_baby/views/screens/medicine/medicine_homepage.dart';
 import 'package:together_baby/views/screens/planner/planner_homepage.dart';
 import 'package:together_baby/views/screens/pumping/pumping_homepage.dart';
 import 'package:together_baby/views/screens/sleep/sleeping_homepage.dart';
+import 'package:together_baby/views/screens/splash_screen.dart';
 import 'package:together_baby/views/screens/vaccine/vaccine_homepage.dart';
 
 import 'controller/breast_feeding_controller.dart';
@@ -43,7 +44,8 @@ class MyApp extends StatelessWidget {
       // ),
       theme: AppTheme.defaultThemeData,
       navigatorKey: navigatorKey,
-      home: const MainBottomNavScreen(),
+      // home: const SignInPage(),
+      home: const SplashScreen(),
       // home: const FeedingHomepage(),
       // home: DiaperHomePage(selectedDate: DateTime.now()),
       // home: SleepHomepage(selectedDate: DateTime.now()),

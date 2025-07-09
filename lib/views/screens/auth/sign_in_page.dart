@@ -6,6 +6,7 @@ import 'package:together_baby/views/base/components/app_icon.dart';
 import 'package:together_baby/views/base/components/custom_svg.dart';
 import 'package:together_baby/views/base/widgets/text_underline.dart';
 import 'package:together_baby/views/screens/auth/sign_up_page.dart';
+import 'package:together_baby/views/screens/main_bottom_nav.dart';
 import '../../../utilities/app_colors.dart';
 import '../../../utilities/app_strings.dart';
 import '../../base/components/custom_text.dart';
@@ -43,10 +44,7 @@ class _SignInPageState extends State<SignInPage> {
                 children: <Widget>[
                   Image.asset(AppImages.authLogoImage),
                   const SizedBox(height: 12),
-                  Text(
-                    'Sign in to your account',
-                    style: Theme.of(context).textTheme.titleMedium,
-                  ),
+                  Text('Sign in to your account', style: Theme.of(context).textTheme.titleMedium),
 
                   const SizedBox(height: 14),
                   Text(
@@ -110,11 +108,11 @@ class _SignInPageState extends State<SignInPage> {
                         },
                         child: Text(
                           AppString.forgotPassword,
-                          style: Theme.of(
-                            context,
-                          ).textTheme.displayMedium?.copyWith(color: AppColors.black,decoration: TextDecoration.underline),
+                          style: Theme.of(context).textTheme.displayMedium?.copyWith(
+                            color: AppColors.black,
+                            decoration: TextDecoration.underline,
+                          ),
                           textAlign: TextAlign.end,
-
                         ),
                       ),
                     ],
@@ -126,6 +124,7 @@ class _SignInPageState extends State<SignInPage> {
                     buttonText: AppString.signIn,
                     // Text that will appear on the button
                     onPressed: () {
+                      Get.to(() => MainBottomNavScreen());
                       FocusScope.of(context).unfocus();
                       clearingTextField(); // Your text clearing function
                     },

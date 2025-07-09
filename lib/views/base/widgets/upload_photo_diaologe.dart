@@ -1,6 +1,6 @@
 import 'dart:io';
 
- import 'package:dotted_border/dotted_border.dart';
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -10,7 +10,9 @@ import '../../../utilities/app_colors.dart';
 import '../../../utilities/app_strings.dart';
 
 class UploadPhotoDialog extends StatefulWidget {
-  const UploadPhotoDialog({super.key});
+  final bool forVideo;
+
+  const UploadPhotoDialog({super.key, this.forVideo = false});
 
   @override
   State createState() => _UploadPhotoDialogState();
@@ -21,8 +23,7 @@ class _UploadPhotoDialogState extends State<UploadPhotoDialog> {
   final ImagePicker _picker = ImagePicker();
 
   Future<void> _pickImage() async {
-    print('koi bhai');
-    final pickedFile = await _picker.pickImage(source: ImageSource.gallery);
+    final XFile? pickedFile = await _picker.pickImage(source: ImageSource.gallery);
     if (pickedFile != null) {
       setState(() {
         _image = File(pickedFile.path);
@@ -39,90 +40,97 @@ class _UploadPhotoDialogState extends State<UploadPhotoDialog> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
-          children: [
+          children: <Widget>[
             Text(
-              'Upload your photo',
+              widget.forVideo ? 'Upload your video' : 'Upload your photo',
               style: Theme.of(
                 context,
               ).textTheme.displayLarge!.copyWith(color: AppColors.primaryColor),
             ),
-            SizedBox(height: 15),
+            const SizedBox(height: 15),
             GestureDetector(
               onTap: _pickImage,
               child: DottedBorder(
                 borderType: BorderType.RRect,
-                radius: Radius.circular(10),
-                dashPattern: [8, 4],
+                radius: const Radius.circular(10),
+                dashPattern: <double>[8, 4],
                 color: AppColors.primaryColor,
                 child: Container(
                   width: double.infinity,
                   height: 200,
                   decoration: BoxDecoration(
-                    color: AppColors.white,
+                    color: AppColors.iconBackground,
                     borderRadius: BorderRadius.circular(10),
                     // border: Border.all(color: AppColors.primaryColor),
                   ),
                   child:
-                  _image == null
-                      ? Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(Icons.cloud_upload_outlined, size: 40, color: AppColors.black),
-                      SizedBox(height: 8),
-                      Text(
-                        'Browse Device Gallery',
-                        style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-                          color: AppColors.grey.withValues(alpha: 0.7),
-                        ),
-                      ),
-                      SizedBox(height: 4),
-                      Text(
-                        'Format: .jpeg, .png & Max file size: 25 MB',
-                        style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-                          color: AppColors.grey.withValues(alpha: 0.4),
-                          fontSize: 12,
-                        ),
-                      ),
-                      SizedBox(height: 16),
-                      SizedBox(
-                        width: 150,
-                        child: OutlinedButton(
-                          style: OutlinedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8),
-                              side: BorderSide(color: AppColors.primaryColor),
-                            ),
+                      _image == null
+                          ? Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              const Icon(
+                                Icons.cloud_upload_outlined,
+                                size: 40,
+                                color: AppColors.black,
+                              ),
+                              const SizedBox(height: 8),
+                              Text(
+                                'Browse Device Gallery',
+                                style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+                                  color: AppColors.grey.withValues(alpha: 0.7),
+                                ),
+                              ),
+                              const SizedBox(height: 4),
+                              Text(
+                                widget.forVideo
+                                    ? 'Format: .mp4 , .mov  & Max file size: 100 MB'
+                                    : 'Format: .jpeg, .png & Max file size: 25 MB',
+                                style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+                                  color: AppColors.grey.withValues(alpha: 0.4),
+                                  fontSize: 12,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                              const SizedBox(height: 16),
+                              SizedBox(
+                                width: 150,
+                                child: OutlinedButton(
+                                  style: OutlinedButton.styleFrom(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(8),
+                                      side: const BorderSide(color: AppColors.primaryColor),
+                                    ),
+                                  ),
+                                  onPressed: _pickImage,
+                                  child: Text(
+                                    'Browse Files',
+                                    style: Theme.of(context).textTheme.displayMedium!.copyWith(
+                                      fontWeight: FontWeight.bold,
+                                      color: AppColors.primaryColor,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          )
+                          : ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: Image.file(_image!, fit: BoxFit.cover),
                           ),
-                          onPressed: _pickImage,
-                          child: Text(
-                            'Browse Files',
-                            style: Theme.of(context).textTheme.displayMedium!.copyWith(
-                              fontWeight: FontWeight.bold,
-                              color: AppColors.primaryColor,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  )
-                      : ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
-                    child: Image.file(_image!, fit: BoxFit.cover),
-                  ),
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
+              children: <Widget>[
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                       side: BorderSide(color: AppColors.grey.withValues(alpha: 0.2), width: 0.2),
                     ),
-                    padding: EdgeInsets.symmetric(vertical: 4, horizontal: 20),
+                    padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 20),
                     backgroundColor: AppColors.white,
                   ),
                   onPressed: () {
@@ -149,10 +157,11 @@ class _UploadPhotoDialogState extends State<UploadPhotoDialog> {
                     }
                   },
                   child: Text(
-                   'Done',
-                    style: Theme.of(
-                      context,
-                    ).textTheme.displayMedium!.copyWith(fontWeight: FontWeight.bold,color: Colors.white),
+                    'Done',
+                    style: Theme.of(context).textTheme.displayMedium!.copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ],
@@ -167,7 +176,7 @@ class _UploadPhotoDialogState extends State<UploadPhotoDialog> {
 Future<File?> showUploadPhotoDialog(BuildContext context) async {
   final File? selectedImage = await showDialog<File?>(
     context: context,
-    builder: (BuildContext context) => UploadPhotoDialog(),
+    builder: (BuildContext context) => const UploadPhotoDialog(),
   );
   return selectedImage;
 }

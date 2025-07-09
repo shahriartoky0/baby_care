@@ -53,6 +53,8 @@ dependencies:
   image_picker: ^1.1.2
   #dotted Border
   dotted_border: ^2.1.0
+  #for icon :
+  flutter_launcher_icons: ^0.14.4
 
 dev_dependencies:
   flutter_test:

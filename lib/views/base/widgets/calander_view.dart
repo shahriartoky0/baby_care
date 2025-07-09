@@ -130,7 +130,11 @@ class _CalendarViewState extends State<CalendarView> {
           child: Row(
             // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              const SizedBox(width: 80),
+              IconButton(
+                onPressed:_showDatePicker,
+                icon: Icon(Icons.calendar_month, color: AppColors.primaryColor),
+              ),
+              SizedBox(width: 30,),
               Expanded(
                 child: Center(
                   child: GestureDetector(
@@ -316,12 +320,11 @@ class _CalendarViewState extends State<CalendarView> {
           ),
         ),
 
-        // Quick navigation buttons
-        Padding(
+       /// Button ============>
+/*        Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Row(
             children: <Widget>[
-
               Expanded(
                 child: ElevatedButton.icon(
                   onPressed: _showDatePicker,
@@ -337,7 +340,7 @@ class _CalendarViewState extends State<CalendarView> {
               const SizedBox(width: 12),
             ],
           ),
-        ),
+        ),*/
       ],
     );
   }
