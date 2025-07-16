@@ -45,27 +45,34 @@ class ProfileHomepage extends StatelessWidget {
               const SizedBox(height: 8),
               Text('Carole K. Strand', style: textTheme.headlineMedium),
               const SizedBox(height: 12),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                spacing: 15,
-                children: <Widget>[
-                  ProfileTopCard(
-                    iconPath: AppIcons.profileIcon,
-                    title: 'My Profile',
-                    subtitle: 'Manage your profile and setting',
-                    onPressed: () {
-                      Get.to(() => const MyProfile());
-                    },
-                  ),
-                  ProfileTopCard(
-                    iconPath: AppIcons.navBabyIcon,
-                    title: 'Baby Profile',
-                    subtitle: 'Manage your profile and setting',
-                    onPressed: () {
-                      Get.to(() => const BabyProfile());
-                    },
-                  ),
-                ],
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  spacing: 15,
+                  children: <Widget>[
+                    Expanded(
+                      child: ProfileTopCard(
+                        iconPath: AppIcons.profileIcon,
+                        title: 'My Profile',
+                        subtitle: 'Manage your profile and setting',
+                        onPressed: () {
+                          Get.to(() => const MyProfile());
+                        },
+                      ),
+                    ),
+                    Expanded(
+                      child: ProfileTopCard(
+                        iconPath: AppIcons.navBabyIcon,
+                        title: 'Baby Profile',
+                        subtitle: 'Manage your profile and setting',
+                        onPressed: () {
+                          Get.to(() => const BabyProfile());
+                        },
+                      ),
+                    ),
+                  ],
+                ),
               ),
               const SizedBox(height: 12),
               Container(
@@ -105,7 +112,7 @@ class ProfileHomepage extends StatelessWidget {
                       iconPath: AppIcons.privacyIcon,
                       onTap: () {
                         Get.to(
-                          () => PolicyTemplatePage(
+                          () => const PolicyTemplatePage(
                             bodyText: 'Privacy policy',
                             appBarHeading: 'Privacy policy',
                           ),
@@ -117,7 +124,7 @@ class ProfileHomepage extends StatelessWidget {
                       iconPath: AppIcons.termsIcon,
                       onTap: () {
                         Get.to(
-                          () => PolicyTemplatePage(
+                          () => const PolicyTemplatePage(
                             bodyText: 'Terms & Conditions',
                             appBarHeading: 'Terms & Conditions',
                           ),
@@ -129,7 +136,7 @@ class ProfileHomepage extends StatelessWidget {
                       iconPath: AppIcons.informationIcon,
                       onTap: () {
                         Get.to(
-                          () => PolicyTemplatePage(bodyText: 'Abous Us', appBarHeading: 'About us'),
+                          () => const PolicyTemplatePage(bodyText: 'Abous Us', appBarHeading: 'About us'),
                         );
                       },
                     ),
@@ -155,7 +162,7 @@ class ProfileHomepage extends StatelessWidget {
                                 ),
                                 TextButton(
                                   onPressed: () {
-                                    Get.offAll(() => SignInPage());
+                                    Get.offAll(() => const SignInPage());
                                     ToastManager.show(
                                       message: "Successfully Logged Out",
                                       backgroundColor: AppColors.red,

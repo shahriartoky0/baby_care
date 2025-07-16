@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:together_baby/views/base/widgets/app_bar.dart';
 
 import '../../../controller/button_controller.dart';
 import '../../base/widgets/select_button.dart';
@@ -17,12 +18,8 @@ class MilestoneHomepage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              Center(
-                child: Text(
-                  'MileStones show here',
-                  style: Theme.of(context).textTheme.displayLarge,
-                ),
-              ),
+              AppBarRegular(title: "Milestones "),
+
               SizedBox(height: 12),
 
               SelectButtonWidget(

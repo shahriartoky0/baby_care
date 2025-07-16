@@ -27,7 +27,7 @@ class BreastFeedingHomepage extends StatelessWidget {
               const SizedBox(height: 12),
               Center(
                 child: Wrap(
-                  alignment: WrapAlignment.center,
+                  alignment: WrapAlignment.spaceEvenly,
                   spacing: 8,
                   runSpacing: 10,
                   children: <Widget>[

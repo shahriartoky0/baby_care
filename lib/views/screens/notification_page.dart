@@ -4,6 +4,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:together_baby/utilities/app_colors.dart';
 import 'package:together_baby/views/base/components/app_icon.dart';
 import 'package:together_baby/views/base/components/custom_svg.dart';
+import 'package:together_baby/views/base/widgets/app_bar.dart';
 
 class NotificationPage extends StatelessWidget {
   const NotificationPage({super.key});
@@ -16,18 +17,10 @@ class NotificationPage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              Row(
-                children: <Widget>[
-                  IconButton(onPressed: () {}, icon: const Icon(Icons.arrow_back_ios_new)),
-                  Expanded(
-                    child: Center(child: Text('Notification', style: textTheme.displayLarge)),
-                  ),
-                  const SizedBox(width: 50),
-                ],
-              ),
+              const AppBarRegular(title: 'Notification'),
               const SizedBox(height: 12),
               ListView.separated(
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 itemCount: 30,
                 itemBuilder: (BuildContext context, int index) {
@@ -49,7 +42,7 @@ class NotificationPage extends StatelessWidget {
                     subtitle: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        const SizedBox(height: 8),
+                          const SizedBox(height: 8),
                         Text(
                           'Tuba has a sleep activity scheduled at 06.00 PM',
                           style: textTheme.labelSmall?.copyWith(fontWeight: FontWeight.w500),
@@ -67,7 +60,7 @@ class NotificationPage extends StatelessWidget {
                 },
 
                 separatorBuilder: (BuildContext context, int index) {
-                  return const Padding(
+                  return   const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 16),
                     child: Divider(),
                   );

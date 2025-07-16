@@ -13,7 +13,7 @@ class ReusableDatePickerField extends StatefulWidget {
   final Widget? prefixIcon;
 
   const ReusableDatePickerField({
-    Key? key,
+    super.key,
     required this.hintText,
     this.controller,
     this.validator,
@@ -22,7 +22,7 @@ class ReusableDatePickerField extends StatefulWidget {
     this.lastDate,
     this.color = Colors.white,
     this.prefixIcon,
-  }) : super(key: key);
+  });
 
   @override
   _ReusableDatePickerFieldState createState() => _ReusableDatePickerFieldState();

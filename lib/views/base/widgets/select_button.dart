@@ -38,11 +38,12 @@ class SelectButtonWidget extends StatelessWidget {
                     },
                     child: Container(
                       margin: const EdgeInsets.symmetric(horizontal: 2),
-
-                      height: 35,
-                      width: Get.width * 0.25,
+                      constraints: BoxConstraints(
+                        minWidth: MediaQuery.sizeOf(context).width * 0.25,
+                      ),
+                       // width: Get.width * 0.25,
                       // margin: const EdgeInsets.symmetric(horizontal: 8),
-                      // padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
                       decoration: BoxDecoration(
                         color:
                             controller.selectedIndex.value == index
@@ -82,3 +83,24 @@ class SelectButtonWidget extends StatelessWidget {
     });
   }
 }
+
+/*
+SelectButtonWidget(
+buttonLabels: const <String>['Month 01', 'Month 02', 'Month 03', 'Month 04'],
+controller: controller,
+),
+SizedBox(height: 12),
+Obx(() {
+switch (controller.selectedIndex.value) {
+case 0:
+return Text('Month 01 Milestone');
+case 1:
+return Text('Month 02 Milestone');
+case 2:
+return Text('Month 03 Milestone');
+case 3:
+return Text('Month 04 Milestone');
+default:
+return const Text("Select an option", style: TextStyle(fontSize: 20));
+}
+}),*/

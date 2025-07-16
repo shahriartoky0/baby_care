@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -24,7 +23,8 @@ class SummaryContainer extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
       // width: Get.width * 0.45,
       // width: MediaQuery.of(context).size.width * 0.45,
-      width:180,
+      width: MediaQuery.of(context).size.width * 0.4,
+      // width:180,
       height: 90,
       decoration: BoxDecoration(
         color: Colors.white,
@@ -39,16 +39,18 @@ class SummaryContainer extends StatelessWidget {
         borderRadius: BorderRadius.circular(6),
         border: Border.all(color: AppColors.modalIconInnerColor),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Text(title, style: textTheme.headlineMedium),
-          const SizedBox(height: 3),
-          Text(
-            content,
-            style: textTheme.displayMedium?.copyWith(fontSize: 16, fontWeight: FontWeight.w600),
-          ),
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text(title, style: textTheme.headlineMedium),
+            const SizedBox(height: 3),
+            Text(
+              content,
+              style: textTheme.displayMedium?.copyWith(fontSize: 16, fontWeight: FontWeight.w600),
+            ),
+          ],
+        ),
       ),
     );
   }

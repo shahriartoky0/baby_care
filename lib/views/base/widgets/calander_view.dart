@@ -287,34 +287,36 @@ class _CalendarViewState extends State<CalendarView> {
                 height: 24,
               ),
               const SizedBox(width: 16),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      const Text(
-                        'Selected Date',
-                        style: TextStyle(fontSize: 12, color: AppColors.grey),
-                      ),
-                      const SizedBox(width: 90),
-                      TextButton.icon(
-                        onPressed: _goToToday,
-                        icon: const Icon(Icons.calendar_today, color: AppColors.medicineCardColor),
-                        label: Text('Today', style: textTheme.labelSmall),
-                        style: TextButton.styleFrom(
-                          foregroundColor: Colors.blue,
-                          // padding: const EdgeInsets.symmetric(vertical: 12),
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisSize: MainAxisSize.max,
+                      children: <Widget>[
+                        const Text(
+                          'Selected Date',
+                          style: TextStyle(fontSize: 12, color: AppColors.grey),
                         ),
-                      ),
-                    ],
-                  ),
-                  Text(
-                    DateFormat('EEEE, MMMM d, yyyy').format(selectedDay),
-                    style: textTheme.headlineMedium,
-                  ),
-                ],
+                          TextButton.icon(
+                          onPressed: _goToToday,
+                          icon: const Icon(Icons.calendar_today, color: AppColors.medicineCardColor),
+                          label: Text('Today', style: textTheme.labelSmall),
+                          style: TextButton.styleFrom(
+                            foregroundColor: Colors.blue,
+                            // padding: const EdgeInsets.symmetric(vertical: 12),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Text(
+                      DateFormat('EEEE, MMMM d, yyyy').format(selectedDay),
+                      style: textTheme.headlineMedium,
+                    ),
+                  ],
+                ),
               ),
             ],
           ),

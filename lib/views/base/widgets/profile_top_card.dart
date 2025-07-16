@@ -26,8 +26,7 @@ class ProfileTopCard extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: Container(
-        constraints: BoxConstraints(minWidth: 120, maxWidth: 180),
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
         decoration: BoxDecoration(
           color: Colors.white,
           boxShadow: const <BoxShadow>[

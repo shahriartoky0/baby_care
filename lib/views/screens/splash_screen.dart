@@ -19,6 +19,7 @@ class SplashScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
+          padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 12),
           child: Column(
             children: <Widget>[
               CustomSvgImage(

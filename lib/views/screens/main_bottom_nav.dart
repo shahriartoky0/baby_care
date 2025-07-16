@@ -83,7 +83,7 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
           return _screens[index];
         },
       ),
-      bottomNavigationBar: Container(
+      bottomNavigationBar: Material(
         child: BottomAppBar(
           color: AppColors.appBarColor,
           // color: AppColors.white,

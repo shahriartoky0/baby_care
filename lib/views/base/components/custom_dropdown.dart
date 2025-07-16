@@ -106,7 +106,7 @@ class CustomDropdown<T> extends StatefulWidget {
   final String? controllerTag;
 
   const CustomDropdown({
-    Key? key,
+    super.key,
     required this.items,
     this.initialValue,
     this.hint = 'Select an option',
@@ -137,7 +137,7 @@ class CustomDropdown<T> extends StatefulWidget {
     this.emptyMessage = 'No items found',
     this.animationDuration = const Duration(milliseconds: 300),
     this.controllerTag,
-  }) : super(key: key);
+  });
 
   @override
   State<CustomDropdown<T>> createState() => _CustomDropdownState<T>();
@@ -316,7 +316,7 @@ class _CustomDropdownState<T> extends State<CustomDropdown<T>> {
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
               decoration: BoxDecoration(
-                color: isSelected ? Theme.of(context).primaryColor.withOpacity(0.1) : null,
+                color: isSelected ? Theme.of(context).primaryColor.withValues(alpha:  0.1) : null,
               ),
               child: Row(
                 children: <Widget>[
@@ -402,7 +402,6 @@ class _CustomDropdownState<T> extends State<CustomDropdown<T>> {
                         final DropdownItem<T>? selectedItem = widget.items.firstWhereOrNull(
                           (DropdownItem<T> item) => item.value == controller.selectedValue,
                         );
-
                         return Text(
                           selectedItem?.label ?? widget.hint ?? 'Select an option',
                           style:
